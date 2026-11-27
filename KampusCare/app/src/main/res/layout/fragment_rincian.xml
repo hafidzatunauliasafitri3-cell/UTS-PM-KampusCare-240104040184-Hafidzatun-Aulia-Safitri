@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_rincian"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationContentDescription="Kembali"
+            app:navigationIcon="@android:drawable/ic_menu_revert"
+            app:title="Rincian Catatan" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_badge_tersimpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/surface_variant_light"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="Tersimpan di perangkat"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="@color/teal_dark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_rincian_judul"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_badge_tersimpan"
+                tools:text="Lampu Ruang 204 Padam" />
+
+            <TextView
+                android:id="@+id/tv_rincian_meta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rincian_judul"
+                tools:text="Kategori: Penerangan\nLokasi: Gedung B Lantai 2\nDibuat: 23 Nov 2026, 23:29" />
+
+            <View
+                android:id="@+id/divider_rincian"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="16dp"
+                android:background="@color/surface_variant_light"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rincian_meta" />
+
+            <TextView
+                android:id="@+id/tv_label_deskripsi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi Temuan"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider_rincian" />
+
+            <TextView
+                android:id="@+id/tv_rincian_deskripsi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_deskripsi"
+                tools:text="Dua lampu neon di sisi timur mati total sehingga ruangan gelap saat kuliah pagi." />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ubah_catatan"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:minHeight="48dp"
+                android:text="Ubah"
+                app:layout_constraintEnd_toStartOf="@id/btn_hapus_catatan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rincian_deskripsi" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_hapus_catatan"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp"
+                android:text="Hapus"
+                android:textColor="@color/error_red"
+                app:layout_constraintBottom_toBottomOf="@id/btn_ubah_catatan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_ubah_catatan"
+                app:layout_constraintTop_toTopOf="@id/btn_ubah_catatan"
+                app:strokeColor="@color/error_red" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
